@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOVE Chat</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100 h-screen flex flex-col justify-center items-center font-sans">
+
+  <div id="login-section" class="text-center p-8 bg-white dark:bg-gray-800 rounded-2xl shadow-xl max-w-sm w-full">
+    <h1 class="text-3xl font-extrabold text-indigo-600 dark:text-indigo-400 mb-2">LOVE</h1>
+    <p class="text-gray-500 dark:text-gray-400 mb-6">Connect instantly, securely, beautifully.</p>
+    <button id="login-btn" class="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl font-medium shadow-md transition duration-200">
+      Sign in with Google
+    </button>
+  </div>
+
+  <div id="chat-section" class="hidden w-full max-w-4xl h-[90vh] flex flex-col bg-white dark:bg-gray-800 rounded-2xl shadow-2xl overflow-hidden border border-gray-100 dark:border-gray-700">
+    <header class="px-6 py-4 bg-gray-50 dark:bg-gray-800/50 border-b border-gray-100 dark:border-gray-700 flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <span class="text-2xl font-bold tracking-wide text-indigo-600 dark:text-indigo-400">LOVE</span>
+        <span class="h-2 w-2 rounded-full bg-green-500 animate-pulse"></span>
+      </div>
+      <button id="logout-btn" class="px-4 py-2 text-sm font-medium text-red-500 hover:bg-red-50 dark:hover:bg-red-950/30 rounded-lg transition">Logout</button>
+    </header>
+
+    <div id="messages-container" class="flex-1 p-6 overflow-y-auto flex flex-col bg-gray-50/50 dark:bg-gray-900/30"></div>
+
+    <form id="message-form" class="p-4 bg-white dark:bg-gray-800 border-t border-gray-100 dark:border-gray-700 flex gap-3 items-center">
+      <label class="cursor-pointer p-2 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-full transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-500" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+        <input type="file" id="file-input" accept="image/*" class="hidden">
+      </label>
+      <input type="text" id="message-input" placeholder="Type a message..." class="flex-1 px-4 py-2 bg-gray-100 dark:bg-gray-700 border-none rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500 text-sm">
+      <button type="submit" class="p-2 bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl shadow transition">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-90" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" /></svg>
+      </button>
+    </form>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
